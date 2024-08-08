@@ -4,8 +4,10 @@ Frontend Grupo#3
 > Desarrollo de un MVP para la aplicación de reservas de un restaurant.
 
 # Evento 
-## Devathon
+Devathon
 https://programacion-es.dev/devathon/
+## Autor
+https://programacion-es.dev/
 
 # Tecnologias a usar
 - Html
@@ -24,7 +26,6 @@ Para poner en funcionamiento una copia local, siga estos sencillos pasos de ejem
 - Control de versiones:   Github
 
 # Instalaciones
-## Instalar dependencias
 - git init
 - npm create vite@latest
 - npm install
@@ -42,7 +43,7 @@ https://github.com/StefanoIG/Devathon-Front
 
 # Planificación y comunicación
 https://trello.com/b/sVexs4bu/devathon
-
+https://discord.com/channels/835193794801958912/942199946692673577
 
 # Participantes
 - 👤 Victor Cruz Mendoza
