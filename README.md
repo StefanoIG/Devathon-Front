@@ -35,9 +35,9 @@ Para poner en funcionamiento una copia local, siga estos sencillos pasos de ejem
 npm run dev
 
 # Repositorios 
-## Backend
+### Backend
 https://github.com/StefanoIG/Devathon
-## Frontedn
+### Frontedn
 https://github.com/StefanoIG/Devathon-Front
 
 # Planificación y comunicación
@@ -45,7 +45,7 @@ https://trello.com/b/sVexs4bu/devathon
 
 
 # Participantes
--👤 Victor Cruz Mendoza
--👤 Estefano
--👤 Andres
+- 👤 Victor Cruz Mendoza
+- 👤 Estefano
+- 👤 Andres
 
