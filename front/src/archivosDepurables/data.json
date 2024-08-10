@@ -1,0 +1,61 @@
+{
+ "users": [
+   {
+     "id": 1,
+     "username": "admin",
+     "password": "admin123",
+     "role": "admin"
+   },
+   {
+     "id": 2,
+     "username": "empleado",
+     "password": "empleado123",
+     "role": "employee"
+   },
+   {
+     "id": 3,
+     "username": "usuario1",
+     "password": "usuario123",
+     "role": "other"
+   }
+ ],
+ "reservations": [
+   {
+     "id": 1,
+     "date": "2024-08-05",
+     "cardNumber": "1234567812345678",
+     "numPersons": 4,
+     "numHours": 2,
+     "dish": "Tacos",
+     "quantity": 3,
+     "tableId": 1
+   },
+   {
+     "id": 2,
+     "date": "2024-08-06",
+     "cardNumber": "2345678923456789",
+     "numPersons": 2,
+     "numHours": 1,
+     "dish": "Burritos",
+     "quantity": 2,
+     "tableId": 2
+   }
+ ],
+ "tables": [
+   {
+     "id": 1,
+     "number": 1,
+     "capacity": 4
+   },
+   {
+     "id": 2,
+     "number": 2,
+     "capacity": 2
+   },
+   {
+     "id": 3,
+     "number": 3,
+     "capacity": 6
+   }
+ ]
+}
