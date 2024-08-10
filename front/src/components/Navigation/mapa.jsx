@@ -95,8 +95,8 @@ export default function General() {
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2">
               <form className="flex gap-2">
-                <Input type="date" placeholder="Fecha de reserva" className="max-w-lg flex-1" />
-                <Button type="submit">Reservar</Button>
+                <input type="date" placeholder="Fecha de reserva" className="max-w-lg flex-1" />
+                <button type="submit">Reservar</button>
               </form>
               <p className="text-xs text-muted-foreground">Recuerda que las reservas están sujetas a disponibilidad.</p>
             </div>
