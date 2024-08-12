@@ -8,22 +8,27 @@ import Header from './components/Navigation/Header.jsx'
 import Home from './components/Home.jsx'
 import Footer from './components/Navigation/Footer.jsx'
 import Mapa from './components/Navigation/mapa.jsx'
+import './App.css';
 function App() {
   return (
-    <Router>
-          <Header />
-      <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-       {/*  <Route path="/reserva" element={<Reserva />} /> */}
-        <Route path="/reservation" element={<Reservation />} /> 
-        <Route path="/profile" element={<UserProfile />} />
-        <Route path="/Mapa" element={<Mapa />} />
-
-        <Route path="/" element={<Home />} />
-      </Routes>
-      <Footer/>
-    </Router>
+    <div >
+      <Router >
+        <div className="app-container">
+        <Header />
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          {/* <Route path="/reserva" element={<Reserva />} /> */}
+          <Route path="/reservation" element={<Reservation />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/Mapa" element={<Mapa />} />
+          <Route path="/" element={<Home />} />
+        </Routes>
+        <Footer />
+        </div>
+        
+      </Router>
+    </div>
   );
 }
 
