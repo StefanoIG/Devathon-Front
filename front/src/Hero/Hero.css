@@ -1,0 +1,54 @@
+.hero {
+  width: 100%;
+  background-color: yellow;
+  padding: 1.2rem 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar-item a:hover {
+  color: #007bff;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .navbar-item a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-item a {
+    font-size: 1rem;
+  }
+}
+
+
+
