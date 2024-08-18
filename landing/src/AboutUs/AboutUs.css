@@ -1,0 +1,48 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding: 50px;
+  background-color: #eeeeee;
+}
+
+.flags-container {
+  align-self: center;
+}
+
+.mexican-flag,
+.colombian-flag {
+  width: 3rem; 
+  height: 3rem;
+}
+
+.title {
+  align-self: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e84a5f;
+  
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .mexican-flag,
+  .colombian-flag {
+    width: 2rem; 
+    height: 2rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+
+
+
+
