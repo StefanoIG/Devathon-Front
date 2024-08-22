@@ -1,13 +1,14 @@
-import { Hero } from './Hero/Hero.jsx';
+import { Navbar } from "./Navbar/Navbar.jsx";
 import { InvoicesSection } from './InvoicesSection/InvoicesSection.jsx';
 import { MainSection } from './MainSection/MainSection.jsx';
-
+import { Hero } from "./Hero/hero";
 const App = () => {
   return (
     <>
-      <Hero />
+      {/* <Navbar />
       <InvoicesSection />
-      <MainSection />
+      <MainSection /> */}
+      <Hero />
     </>
   )
 };

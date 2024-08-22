@@ -1,6 +1,6 @@
-import './Hero.css';
+import './Section.css';
 
-const Hero = () => {
+const Section = () => {
   return (
     <header className='hero'>
       <div className='hero-content'>
@@ -12,4 +12,4 @@ const Hero = () => {
   );
 };
 
-export { Hero };
+export { Section };

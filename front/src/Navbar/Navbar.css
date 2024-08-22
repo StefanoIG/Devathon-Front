@@ -1,0 +1,70 @@
+.navbar-main {
+  width: 100%;
+  background-color: #f0f0f0; /* Color de fondo más suave */
+  padding: 2.2rem 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* Espacio entre logo y menú */
+  align-items: center; /* Centrar verticalmente */
+  padding: 0 20px; /* Padding horizontal */
+}
+
+.logo {
+  width: auto;
+  justify-content: flex-start;
+
+  height: 50px; /* Altura fija para el logo */
+  display: flex;
+  align-items: center; /* Centrar verticalmente */
+}
+
+.navbar-item:hover {
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.navbar-menu {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  padding: 10px 15px; /* Añadir padding para mejor clicabilidad */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Transición suave */
+}
+
+.navbar-item a:hover {
+  color: #ffffff;
+  background-color: #007bff; /* Fondo azul en hover */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    padding: 0 10px; /* Ajustar padding para móviles */
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .navbar-item a {
+    font-size: 1.2rem;
+    padding: 8px 12px; /* Ajustar padding para móviles */
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-item a {
+    font-size: 1rem;
+    padding: 6px 10px; /* Ajustar padding para móviles */
+  }
+}
