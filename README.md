@@ -47,6 +47,8 @@ https://discord.com/channels/835193794801958912/942199946692673577
 
 # Participantes
 - 👤 Victor Cruz Mendoza
-- 👤 Estefano
+- 👤 Stefano
 - 👤 Andres
+- 👤 Milton
+- 👤 Jorge
 
