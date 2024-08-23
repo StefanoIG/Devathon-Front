@@ -1,0 +1,55 @@
+.invoices-section {
+  display: flex;
+  align-items: center;
+  background-color: #f0f0f0; 
+  padding: 1.2rem;
+}
+
+.invoices-left {
+  flex: 0.5;
+  text-align: left;
+}
+
+.invoices-center {
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem; 
+}
+
+.invoices-center .date-input {
+  margin-bottom: 0rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+
+@media (max-width: 768px) {
+  .invoices-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .invoices-left {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .invoices-center {
+    width: 100%;
+    justify-content: center; 
+  }
+}
+
+@media (max-width: 480px) {
+  .date-input {
+    width: 100%;
+  }
+
+  .invoices-center {
+    flex-direction: column; 
+  }
+}
+

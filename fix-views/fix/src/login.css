@@ -1,0 +1,107 @@
+
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.tab-menu {
+  display: flex;
+  justify-content: space-around;
+list-style-type: none;
+}
+
+.tab-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  font-size: xx-large;
+}
+
+.tab-item.active {
+  background-color: #4caf50;
+  color: white;
+  letter-spacing:.1rem;
+  font-weight: bolder;
+}
+
+.tab-content {
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.tab-section {
+  display: none;
+}
+
+.tab-section.active {
+  display: block;
+}
+
+.form-login,
+.form-register {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin: 10px 0 5px;
+}
+
+input,
+select,
+.button {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* .button {
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--button-color-action);
+} */
+
+
+
+/* Estilos generales */
+body, h1, h2, p, label, input, button {
+  font-family: Arial, sans-serif;
+}
+
+.main-container, .tab-container {
+  padding: 1rem;
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  .header h1, .main-container h1, .main-container h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .navbar li {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+
+  .tab-container, .reservation-details, .grid-container {
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .silla {
+    width: 30px;
+    height: 30px;
+  }
+  .main-container, .tab-container {
+    padding: .1rem;
+  }  
+}

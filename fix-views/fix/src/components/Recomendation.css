@@ -1,0 +1,40 @@
+.menu {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.menu-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e84a5f;
+}
+
+.menu-items {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.menu-item {
+  background-color: #eeeeee;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 480px) {
+  .menu-title {
+    font-size: 1.3rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+}
