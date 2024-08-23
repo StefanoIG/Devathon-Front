@@ -1,0 +1,527 @@
+/* General Styles */
+.reservas-list {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .reservas-list h1 {
+    text-align: center;
+    color: #6e4bce;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styles */
+  .reservas-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  /* Button Styles */
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .reservas-list tr:hover {
+    background-color: #ddd;
+  }
+  
+  .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* Accessibility Improvements */
+  .reservas-list {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .reservas-list th, .reservas-list td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .reservas-list th {
+    background-color: #6e4bce;
+    color: white;
+    font-weight: bold;
+  }
+  .reservas-list tr:nth-child(even) {
+    background-color: #f9f9f9;
+    }
+    .reservas-list tr:hover {
+    background-color: #ddd;
+    }
+    .cancel-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    }
+    

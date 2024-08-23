@@ -1,0 +1,79 @@
+.hero {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  background-image: url('https://c4.wallpaperflare.com/wallpaper/478/823/744/chips-wallpaper-preview.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: auto;
+  height: 100vh;
+  width: 100%;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 37px;
+}
+
+.cta-button {
+  display: inline;
+  background-color: #DCFF06;
+  color: #000; 
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  .cta-button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+.logout-button{
+  background-color: #ff4c4c;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}

@@ -1,0 +1,107 @@
+.about-us {
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  padding: 50px;
+  background-color: #eeeeee;
+  background-image: url('https://example.com/background-image.jpg'); /* Reemplaza con una URL válida */
+  background-size: cover;
+  background-position: center;
+  color: #333;
+}
+
+.flags-container {
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+.mexican-flag,
+.colombian-flag {
+  width: 3rem; 
+  height: 3rem;
+}
+
+.title {
+  align-self: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #e84a5f;
+}
+
+.subtitle {
+  align-self: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.paragraph {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.dishes-list {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.dishes-list li {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #DCFF06;
+  color: #000; /* Cambiado a negro para mejor contraste */
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
+
+.cta-button:hover {
+  background-color: #e55a5a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .about-us {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: 1.3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .mexican-flag,
+  .colombian-flag {
+    width: 2rem; 
+    height: 2rem;
+  }
+
+  .paragraph {
+    font-size: 0.8rem;
+  }
+
+  .dishes-list li {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+}
