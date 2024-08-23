@@ -7,7 +7,7 @@ import Reservation from './views/Reservation';
 import UserProfile from './views/UserProfile';
 import PaymentGateway from './views/PaymentGateway';
 import ErrorPage from './views/error-page'; // Ruta 404
-
+import ReservasList from './views/ReservasList';
 import Footer from './components/Footer';
 import './login.css';
 
@@ -18,9 +18,14 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/login",
+    path: "/auth",
     element: <Login />,
   },
+  {
+  path: "/reservas-list",
+    element: <ReservasList />,
+  },
+
   {
     path: "/reservation",
     element: <Reservation />,

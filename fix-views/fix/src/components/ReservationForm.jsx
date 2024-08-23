@@ -1,63 +1,156 @@
+import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
+
 const ReservationForm = () => {
-  const handleReservationSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData.entries());
-    localStorage.setItem('reservation', JSON.stringify(data));
-    alert('Datos de reservación guardados.');
+  const [mesas, setMesas] = useState([]);
+
+  // Función para hacer el fetch de las mesas
+  useEffect(() => {
+    const accessToken = sessionStorage.getItem('access_token');
+    fetch('http://127.0.0.1:8000/api/v2/mesas', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${accessToken}`
+      }
+    })
+      .then(response => response.json())
+      .then(data => setMesas(data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
+
+  // Función que cuando se da click en una mesa se pone una alerta de SweetAlert2 pidiendo datos para la reserva
+  const handleTableClick = (mesa) => {
+    const { id, numero } = mesa;
+    Swal.fire({
+      title: `Reservar mesa ${numero}`,
+      html: `
+        <label for="swal-input-date">Fecha:</label>
+        </br>
+        <input id="swal-input-date" class="swal2-input" type="date" min="${new Date().toISOString().split('T')[0]}">
+        <label for="swal-input1">Hora de entrada:</label>
+        </br>
+        <input id="swal-input1" class="swal2-input" placeholder="Hora de entrada" type="time">
+        </br>
+        <label for="swal-input2">Cantidad de personas:</label>
+        </br>
+        <input id="swal-input2" class="swal2-input" placeholder="Cantidad de personas" type="number" min="1">
+        <label for="swal-input3">Hora de salida (opcional):</label>
+        </br>
+        <input id="swal-input3" class="swal2-input" placeholder="Hora de salida" type="time">
+      `,
+      focusConfirm: false,
+      allowOutsideClick: false,
+      showCancelButton: true,
+      cancelButtonText: 'Cancelar',
+      preConfirm: () => {
+        const fecha = document.getElementById('swal-input-date').value;
+        let hora_entrada = document.getElementById('swal-input1').value;
+        const cantidad_personas = document.getElementById('swal-input2').value;
+        const hora_salida = document.getElementById('swal-input3').value;
+
+        // Validaciones
+        if (!fecha || !hora_entrada || !cantidad_personas) {
+          Swal.showValidationMessage('Todos los campos son obligatorios, excepto la hora de salida');
+          return false;
+        }
+
+        const entradaDate = new Date(`${fecha}T${hora_entrada}:00`);
+        const minTime = new Date(`${fecha}T10:00:00`);
+        const maxTime = new Date(`${fecha}T20:00:00`);
+
+        if (entradaDate < minTime || entradaDate > maxTime) {
+          Swal.showValidationMessage('La hora de entrada debe estar entre las 10:00 AM y las 8:00 PM');
+          return false;
+        }
+
+        if (cantidad_personas <= 0) {
+          Swal.showValidationMessage('La cantidad de personas debe ser un número positivo');
+          return false;
+        }
+
+        const currentDate = new Date();
+        const selectedDate = new Date(fecha);
+        selectedDate.setHours(entradaDate.getHours(), entradaDate.getMinutes());
+
+        if (selectedDate < currentDate) {
+          Swal.showValidationMessage('No se pueden reservar fechas pasadas');
+          return false;
+        }
+
+        // Ajustar la hora de entrada para que siempre termine en ":59"
+        hora_entrada += ':59';
+
+        return { fecha, hora_entrada, cantidad_personas, hora_salida };
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const { fecha, hora_entrada, cantidad_personas, hora_salida } = result.value;
+        const token = sessionStorage.getItem('access_token');
+
+        fetch('http://127.0.0.1:8000/api/v1/crear-reserva', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            mesa_id: id, // Aquí usamos el ID de la mesa correctamente
+            fecha_reserva: fecha,
+            hora_reserva: hora_entrada
+          })
+        })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            // Verifica si la respuesta contiene el ID de la reserva o algún otro campo esperado
+            if (data.id) { // Aquí asumes que si hay un ID, la reserva fue exitosa
+              Swal.fire('Reserva creada', `Reservaste mesa ${numero} para el ${data.fecha_reserva} de ${data.hora_reserva}`, 'success');
+            } else {
+              Swal.fire('Error', 'Hubo un problema al crear la reserva', 'error');
+            }
+          })
+          .catch(error => {
+            Swal.fire('Error', `Hubo un problema al crear la reserva: ${error.message}`, 'error');
+            console.log('Error creating reservation:', error);
+          });
+
+      }
+    });
   };
 
   return (
-    <form id="reserva-form" onSubmit={handleReservationSubmit}>
-      <section className="reservation-details">
-        {/* <h2>Detalles de la Reserva</h2> */}
-        <fieldset>
-          <label htmlFor="reservation-date">Fecha de la Reserva:</label>
-          <input type="date" id="reservation-date" name="reservation-date" required />
-          <label htmlFor="num-hours">Número de Horas de Estadía:</label>
-          <input type="number" id="num-hours" name="num-hours" min="1" max="12" required />
-        </fieldset>  
 
-        <fieldset>
-          <label htmlFor="card-number">Número de Tarjeta:</label>
-          <input type="text" id="card-number" name="card-number" required pattern="\d{16}" placeholder="1234 5678 9101 1121" />
-          <label htmlFor="num-persons">Número de Personas:</label>
-          <input type="number" id="num-persons" name="num-persons" min="1" max="20" required />
 
-        </fieldset>
-        <fieldset>
-          <label htmlFor="dish">Platillo:</label>
-          <input type="text" id="dish" name="dish" />
-          <label htmlFor="quantity">Cantidad:</label>
-          <input type="number" id="quantity" name="quantity" />
-        </fieldset>
-
-      </section>
-      <div className="decoration">
-        <div>Entrada</div>
-        <div>Recibidor-Caja</div>
-        <div>Sanitarios</div>
+    <div >
+      <div className="container-colors">
+      <p>Mesas libres <span className="color-box color-element-true"></span></p>
+      <p>Mesas Ocupadas <span className="color-box color-element-false"></span></p>
       </div>
-      <section className="grid-container">
-        {[...Array(12)].map((_, i) => (
-          <label key={i} className="table">
-            Mesa {i + 1}
-            <div className="sillas">
-              {[...Array(4)].map((_, j) => (
-                <div key={j} className="silla"></div>
+      
+      <div className="decoration">
+        {mesas.map((mesa, index) => (
+          <div key={index} className={`table-container ${mesa.capacidad > 4 ? 'large' : ''}`}>
+            <div
+              className={`table ${mesa.Estado === 'Activa' ? 'table-inactive' : 'table-active'}`}
+              onClick={() => handleTableClick(mesa)}
+            >
+              {Array.from({ length: mesa.capacidad }).map((_, i) => (
+                <div key={i} className={`chair ${['top', 'right', 'bottom', 'left'][i % 4]}`}></div>
               ))}
             </div>
-            <input type="checkbox" id={`mesa-${i + 1}`} className="checkbox" />
-          </label>
+            <div className="table-number">Mesa {mesa.numero}</div>
+          </div>
         ))}
-      </section>
-      <section className="decoration">
-        <div>Cocina</div>
-        <div>Bar</div>
-        <div>Area de juegos</div>
-      </section>
-      <button type="submit"><strong>Reservar</strong></button>
-    </form>
+
+
+      </div>
+
+    </div>
   );
 };
 

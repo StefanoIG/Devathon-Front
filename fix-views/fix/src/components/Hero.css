@@ -2,18 +2,29 @@
   display: grid;
   place-items: center;
   height: 100vh;
+  width: 100%;
   color: #fff;
   text-align: center;
   background-image: url('https://c4.wallpaperflare.com/wallpaper/478/823/744/chips-wallpaper-preview.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 50px 50px 10px 50px;
-  height: 16rem;
+  padding: auto;
+  height: 100vh;
   width: 100%;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 h1 {
@@ -28,8 +39,8 @@ p {
 
 .cta-button {
   display: inline;
-  background-color: #ff6b6b;
-  color: #fff;
+  background-color: #DCFF06;
+  color: #000; 
   text-decoration: none;
   padding: 15px 30px;
   border-radius: 5px;
