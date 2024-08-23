@@ -1,0 +1,62 @@
+.table-employee {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    font-family: 'Arial', sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .table-employee thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+  }
+  
+  .table-employee th,
+  .table-employee td {
+    padding: 12px 15px;
+  }
+  
+  .table-employee tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .table-employee tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .table-employee tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+  }
+  
+  .table-employee tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .table-employee button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .table-employee button:hover {
+    opacity: 0.8;
+  }
+  
+  .table-employee button:focus {
+    outline: none;
+  }
+  
+  .table-employee button:nth-of-type(1) {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .table-employee button:nth-of-type(2) {
+    background-color: #f44336; /* Red */
+    color: white;
+  }

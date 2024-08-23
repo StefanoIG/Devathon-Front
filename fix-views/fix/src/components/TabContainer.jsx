@@ -1,5 +1,6 @@
 import swal from 'sweetalert2';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 
 const TabContainer = () => {
@@ -37,26 +38,103 @@ const TabContainer = () => {
       const data = await response.json();
       sessionStorage.setItem('access_token', data.access);
       sessionStorage.setItem('refresh_token', data.refresh);
-      alert('Tokens guardados en sessionStorage.');
+      swal.fire('Inicio de sesión exitoso.');
+      //redirigir al usuario en 30 segundos
+      setTimeout(() => {
+        window.location.href = '/';
+      }, 3000);      
     } catch (error) {
       console.error('Error:', error);
-      alert('Error al iniciar sesión.');
+      swal.fire('Error al iniciar sesión.');
     }
   };
 
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
-    // Lógica para manejar el registro
+  
+    // Obtén los valores de los campos del formulario
+    const nombre = e.target.nombre.value;
+    const apellido = e.target.apellido.value;
+    const correo_electronico = e.target.correo_electronico.value;
+    const password = e.target.password.value;
+  
+    // Prepara el cuerpo de la solicitud
+    const requestBody = {
+      nombre,
+      apellido,
+      correo_electronico,
+      password,
+    };
+  
+    try {
+      // Realiza la solicitud POST a la API
+      const response = await fetch('http://127.0.0.1:8000/api/v1/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+      });
+  
+      // Maneja la respuesta de la API
+      if (response.ok) {
+        const data = await response.json();
+        Swal.fire('Éxito', 'Registro exitoso.', 'success');
+        // Opcional: Redirige al usuario o limpia el formulario
+        navigate('/auth');
+
+      } else {
+        // Maneja errores si la respuesta no es OK
+        const errorData = await response.json();
+        Swal.fire('Error', errorData.error || 'No se pudo completar el registro.', 'error');
+      }
+    } catch (error) {
+      console.error('Error al registrar:', error);
+      Swal.fire('Error', 'Ocurrió un error al intentar registrar.', 'error');
+    }
   };
+  
 
   const handleTermsClick = () => {
-    swal.fire({
+    Swal.fire({
       title: 'Términos y Condiciones',
-      text: 'Aquí van los términos y condiciones...',
+      html: `
+        <h3>Términos y Condiciones del Servicio</h3>
+        <p><strong>1. Introducción</strong></p>
+        <p>Bienvenido a [Nombre del Comedor]. Estos términos y condiciones rigen el uso de nuestros servicios y el acceso a nuestras instalaciones. Al hacer una reserva o utilizar nuestros servicios, usted acepta estos términos y condiciones en su totalidad.</p>
+        
+        <p><strong>2. Reservas</strong></p>
+        <p>Las reservas deben realizarse con al menos [X] horas de anticipación. Las reservas para grupos grandes deben ser confirmadas por nuestro equipo. No garantizamos la disponibilidad de mesas sin una reserva previa.</p>
+        
+        <p><strong>3. Cancelaciones</strong></p>
+        <p>Para cancelar una reserva, debe hacerlo al menos [Y] horas antes de la hora de la reserva. Las cancelaciones tardías pueden estar sujetas a cargos.</p>
+        
+        <p><strong>4. Horario de Atención</strong></p>
+        <p>El comedor está abierto de [Hora de Apertura] a [Hora de Cierre]. Nos reservamos el derecho de cerrar antes de la hora establecida si no hay clientes.</p>
+        
+        <p><strong>5. Política de Pagos</strong></p>
+        <p>Todos los pagos deben realizarse en el momento de la visita. Aceptamos efectivo y tarjetas de crédito/débito. Los cheques no están aceptados.</p>
+        
+        <p><strong>6. Conducta en el Comedor</strong></p>
+        <p>Se espera que todos los clientes se comporten de manera respetuosa hacia el personal y otros clientes. Nos reservamos el derecho de pedir a cualquier cliente que se comporte de manera inapropiada que abandone nuestras instalaciones.</p>
+        
+        <p><strong>7. Responsabilidad</strong></p>
+        <p>No somos responsables por la pérdida o daño de pertenencias personales mientras se encuentren en nuestras instalaciones. Los clientes son responsables de cualquier daño causado a la propiedad del comedor.</p>
+        
+        <p><strong>8. Modificaciones a los Términos</strong></p>
+        <p>Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones serán efectivas tan pronto como se publiquen en nuestro sitio web o se comuniquen a los clientes.</p>
+        
+        <p><strong>9. Contacto</strong></p>
+        <p>Para cualquier pregunta o comentario sobre estos términos y condiciones, por favor contáctenos en [correo electrónico] o [número de teléfono].</p>
+        
+        <p><strong>10. Aceptación de los Términos</strong></p>
+        <p>Al hacer una reserva o utilizar nuestros servicios, usted acepta que ha leído, entendido y aceptado estos términos y condiciones.</p>
+      `,
       icon: 'info',
       confirmButtonText: 'Aceptar'
     });
   };
+  
 
   const handelRecoveryPassword = (e) => {
     e.preventDefault();
@@ -78,7 +156,7 @@ const TabContainer = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ email }),
+          body: JSON.stringify({ email}),
         })
           .then(response => {
             if (!response.ok) {

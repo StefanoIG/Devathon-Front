@@ -50,9 +50,7 @@ p {
   transition: background-color 0.3s ease;
 }
 
-.cta-button:hover {
-  background-color: #ff4c4c;
-}
+
 
 @media (max-width: 480px) {
   h1 {
@@ -69,4 +67,13 @@ p {
   }
 }
 
-
+.logout-button{
+  background-color: #ff4c4c;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease;
+}
